@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="gifChat" >
+  <head>
+    <meta charset="utf-8">
+    <title>Gifs Chat</title>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="https://cdn.rawgit.com/alertifyjs/alertify.js/v1.0.6/dist/js/alertify.js"></script>
+    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+
+    <link href="http://dfala.github.io/lightcss/public/css/style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+  </head>
+  <body ng-controller="MyController">
+    <header class="l-header-separated">
+      <div class="l-left-box">
+        <div>GIFS</div>
+      </div>
+      <div class="l-right-box">
+        <div>Home</div>
+        <div>Card</div>
+      <div>Card</div>
+      </div>
+    </header>
+
+    <div class="l-container">
+      <input type="text" ng-model="gifQuery"/>
+      <button class="l-btn-dark" ng-click="addGif(gifQuery)">Get Gifs</button>
+
+
+      <div ng-repeat="img in images track by $index">
+        <img ng-src="{{img}}"/>
+      </div>
+    </div>
+
+    <script src="js/app.js" charset="utf-8"></script>
+    <script src="js/controller.js" charset="utf-8"></script>
+    <script src="js/service.js" charset="utf-8"></script>
+  </body>
+</html>
